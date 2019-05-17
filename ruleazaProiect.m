@@ -3,7 +3,7 @@
 %aceasta functie ruleaza intregul proiect 
 
 %citeste o imagine
-img = imread('C:\Users\stefa\Desktop\an3sem1\va\tema2\data\lac.jpg');
+img = imread('data\lac.jpg');
 
 %reducem imaginea in latime cu 20 de pixeli
 %seteaza parametri
