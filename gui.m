@@ -142,13 +142,30 @@ function pushbutton2_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+% I = get(get(handles.axes3,'Children'),'CData');
+%[filename, foldername] = imsave('Where do you want the file saved?');
+%complete_name = fullfile(foldername, filename);
+F=getimage(handles.axes3);
+%pathname = 'C:\Users\Desktop';
+k=int8(rand*1000)
+%filename = ['Test' num2str(k) '.jpg'];
+imwrite(F,['Test' num2str(k) '.jpg']);
+%saveas(F,"fullfile('C:\Users\Desktop'",['figure.jpg']);
 
 % --- Executes on button press in pushbutton3.
 function pushbutton3_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton3 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+% get the image data
+ I = get(get(handles.axes1,'Children'),'CData');
+ w=str2double(get(handles.edit1, 'String'));
+ h=str2double(get(handles.edit2, 'String'));
+ % do the operation on it
+ img1=micsoreazaLatime(I,w,"programareDinamica",0,[255 0 0]');
+ img2=micsoreazaInaltime(img1,h,"programareDinamica",0,[255 0 0]');
+ axes(handles.axes3)
+ imshow(img2)
 
 
 % --- Executes on button press in pushbutton4.
@@ -163,7 +180,10 @@ function pushbutton5_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton5 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+img = getimage(handles.axes1);
+imgRedimensionata=eliminaObiect(img);
+axes(handles.axes3)
+imshow(imgRedimensionata)
 
 % --- Executes during object deletion, before destroying properties.
 function pushbutton3_DeleteFcn(hObject, eventdata, handles)
