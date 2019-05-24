@@ -35,7 +35,7 @@ set(h2, 'XLim', xsize, 'YLim', ysize);
 xlabel('rezultatul nostru');
 
 %3. imaginea obtinuta prin redimensionare traditionala
-h3 = subplot(1,3,3);imshow(imgRedimensionata_traditional);
+h3 = subplot(1,3,3);imshow(imgRedimensionata_traditional)
 %xsize = get(h3,'XLim');ysize = get(h3,'YLim');
-set(h3, 'XLim', xsize, 'YLim', ysize);
-xlabel('rezultatul imresize');
+set(h3, 'XLim', xsize, 'YLim', ysize)
+xlabel('rezultatul imresize')
